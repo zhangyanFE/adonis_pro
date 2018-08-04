@@ -16,3 +16,6 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+// 资源控制器
+Route.resource('posts', 'PostController')
