@@ -1,6 +1,7 @@
 'use strict'
 
 const Database = use('Database')
+const Post = use('App/Models/Post')
 /**
  * Resourceful controller for interacting with posts
  */
@@ -10,6 +11,10 @@ class PostController {
    * GET posts
    */
   async index ({ request, response, view }) {
+    const posts = await Post.all() // 模型 all方法
+    // return posts
+
+    return view.render('post.index', { posts: posts.toJSON()})
   }
 
   /**
